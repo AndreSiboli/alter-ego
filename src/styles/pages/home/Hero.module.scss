@@ -28,14 +28,14 @@
     position: absolute;
     top: 15%;
     left: 50%;
-    transform: translate(-50%, 0%);
     opacity: 0;
     pointer-events: none;
-
+    
     h1 {
       font-size: clamp(2.5rem, 10vw, 10rem);
       letter-spacing: 0.25em;
       font-family: var(--font-cook);
+      text-align: center;
     }
   }
 

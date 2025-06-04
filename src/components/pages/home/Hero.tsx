@@ -45,12 +45,15 @@ export default function Hero(props: PropsType) {
         },
         "-=.1"
       )
-      .to(
+      .fromTo(
         h1Ref.current,
         {
+          xPercent: -50,
+          yPercent: 40,
+        },
+        {
           opacity: 1,
-          x: "-50%",
-          y: "-50%",
+          yPercent: -50,
           ease: "power2.inOut",
           duration: 0.5,
         },
@@ -97,9 +100,8 @@ export default function Hero(props: PropsType) {
       .to(
         h1Ref.current,
         {
+          yPercent: 40,
           opacity: 0,
-          x: "-50%",
-          y: "-20%",
           ease: "power2.inOut",
           duration: 0.5,
           onComplete: () => {
@@ -117,6 +119,7 @@ export default function Hero(props: PropsType) {
   }
 
   function changeColor() {
+    setNavStyles({ color: currCharacter.palletColor.font });
     gsap
       .timeline()
       .to([asideLeftRef.current, asideRightRef.current], {

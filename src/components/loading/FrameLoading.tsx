@@ -77,26 +77,25 @@ export default function FrameLoading(props: PropsType) {
           opacity: 0,
           duration: 0.5,
         })
-
+        .to(
+          childrenText,
+          {
+            duration: 0.15,
+            "clip-path": " polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+          },
+          "=-.4"
+        )
         .to(
           children,
           {
             duration: 0.5,
             scaleY: 0,
           },
-          "=-.4"
-        )
-        .to(
-          childrenText,
-          {
-            opacity: 0,
-            duration: 0.5,
-          },
-          "=-.5"
+          "=-.3"
         )
         .to(frameRef.current, {
           visibility: "hidden",
-          onComplete: () => {
+          onStart: () => {
             document.body.style.overflow = "auto";
             handleLoading(false);
           },

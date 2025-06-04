@@ -10,7 +10,7 @@ export const characters: CharacterType[] = [
   {
     id: "1",
     name: "Guts",
-    title: "Berserk",
+    title: "Guts",
     image: { src: gutsImage, alt: "Guts from Berserk" },
     japanese: "ベルセルク",
     palletColor: {
