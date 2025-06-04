@@ -16,50 +16,6 @@ export default function FrameLoading(props: PropsType) {
   const textRef = useRef<HTMLDivElement>(null);
   const loadingRef = useRef<HTMLDivElement>(null);
 
-  // function animateLap(target: Element, bound: any, reverse = false) {
-  //   const points = [
-  //     {
-  //       y: bound.yMiddle - 30,
-  //       x: bound.xMiddle,
-  //     }, // top
-  //     {
-  //       y: bound.yMiddle,
-  //       x: bound.xMiddle + 70,
-  //     }, // right
-  //     {
-  //       x: bound.xMiddle,
-  //       y: bound.yMiddle + 30,
-  //     }, // bottom
-  //     {
-  //       y: bound.yMiddle,
-  //       x: bound.xMiddle - 70,
-  //     }, // left
-  //   ];
-
-  //   const pointsReverse = [...points.slice(2), ...points.slice(0, 2)];
-
-  //   const sequence = reverse ? pointsReverse : points;
-
-  //   const tl = gsap.timeline({
-  //     defaults: {
-  //       duration: 0.5,
-  //       ease: "expo.inOut",
-  //     },
-  //   });
-
-  //   // Delay it
-  //   tl.set(target, {
-  //     delay: 1,
-  //   });
-
-  //   // Loop through points
-  //   sequence.forEach((pos) => {
-  //     tl.to(target, pos);
-  //   });
-
-  //   return tl;
-  // }
-
   useEffect(() => {
     if (
       !bgRef.current ||
@@ -98,7 +54,7 @@ export default function FrameLoading(props: PropsType) {
         duration: 0.5,
         ease: "power2.inOut",
         "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        // stagger: 0.2,
+        stagger: 0.2,
       });
 
     gsap.delayedCall(4, () => {

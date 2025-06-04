@@ -3,11 +3,11 @@
 
 .header {
   width: 100%;
-  // padding: 1em 2em;
-  padding: 0.5em 2em; // for now
+  padding: 0.5em 2em;
   position: absolute;
   z-index: 99;
-  transition: border-bottom 0.15s ease-in-out, color .15s ease-in-out, background .15s ease-in-out;
+  transition: border-bottom 0.15s ease-in-out, color 0.15s ease-in-out,
+    background 0.15s ease-in-out, transform 0.15s;
   border-bottom: 1px solid transparent;
 
   // &:not(.onTop) {
@@ -19,12 +19,6 @@
   &_container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 1.5em;
-  }
-
-  &_wrapper {
-    display: flex;
     align-items: center;
     gap: 1.5em;
   }

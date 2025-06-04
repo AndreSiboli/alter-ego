@@ -16,7 +16,7 @@ interface PropsType {
 
 export default function Hero(props: PropsType) {
   const { isLoading } = props;
-  const { setglobalStyles } = use(NavbarContext);
+  const { setNavStyles } = use(NavbarContext);
   const [currCharacter, setCurrCharacter] = useState(characters[0]);
   const [isChanging, setIsChanging] = useState(false);
 
@@ -27,7 +27,7 @@ export default function Hero(props: PropsType) {
   const asideLeftRef = useRef<HTMLDivElement>(null);
 
   function appearAnimation() {
-    setglobalStyles({ color: currCharacter.palletColor.font });
+    setNavStyles({ color: currCharacter.palletColor.font });
     gsap
       .timeline()
       .to(parentRef.current, {

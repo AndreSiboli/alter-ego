@@ -70,7 +70,6 @@ export default function CollageImages() {
   useEffect(() => {
     if (tlRef.current) {
       tlRef.current.kill();
-      // ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     }
 
     resetStyles();
@@ -88,7 +87,7 @@ export default function CollageImages() {
     else screenAnimation(tl);
 
     requestAnimationFrame(() => {
-      ScrollTrigger.refresh(); 
+      ScrollTrigger.refresh();
     });
 
     tlRef.current = tl;

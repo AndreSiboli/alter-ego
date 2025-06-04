@@ -31,7 +31,6 @@
     transform-origin: top;
     transform: translateX(-50%);
     background: #fff;
-
   }
 
   &_text {
@@ -43,7 +42,6 @@
 
     div {
       color: #fff;
-      font-family: var(--font-delius);
       font-size: 2em;
       clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
       text-transform: uppercase;

@@ -73,8 +73,8 @@ export default function About() {
               <p>
                 Humans are complex. We aren&apos;t just one thing. We have
                 courage, fear, love, anger, ambition, doubt — and sometimes we
-                need a different &quot;lens&quot; to act out what we feel inside.
-                That&apos;s where an alter ego comes in.
+                need a different &quot;lens&quot; to act out what we feel
+                inside. That&apos;s where an alter ego comes in.
               </p>
             </div>
           </article>

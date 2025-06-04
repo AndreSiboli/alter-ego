@@ -12,7 +12,7 @@ import Answer from "@/components/pages/home/Answer";
 import CollageImages from "@/components/pages/home/CollageImages";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>

@@ -13,8 +13,8 @@ import {
 interface ContextType {
   isOnTop: boolean;
   setIsOnTop: Dispatch<SetStateAction<boolean>>;
-  globalStyles: CSSProperties;
-  setglobalStyles: Dispatch<SetStateAction<CSSProperties>>;
+  navStyles: CSSProperties;
+  setNavStyles: Dispatch<SetStateAction<CSSProperties>>;
 }
 
 export const NavbarContext = createContext({} as ContextType);
@@ -25,14 +25,11 @@ interface ProviderType {
 
 export default function NavbarProvider(props: ProviderType) {
   const { children } = props;
-  const [isOnTop, setIsOnTop] = useState(false);
-  const [globalStyles, setglobalStyles] = useState<CSSProperties>({});
+  const [isOnTop, setIsOnTop] = useState(false); //It'll be used soon
+  const [navStyles, setNavStyles] = useState<CSSProperties>({});
 
   function scrolling() {
-    const scroll = window.scrollY;
-
-    if (scroll === 0) setIsOnTop(true);
-    else setIsOnTop(false);
+    setIsOnTop(window.scrollY === 0);
   }
 
   useEffect(() => {
@@ -49,7 +46,12 @@ export default function NavbarProvider(props: ProviderType) {
 
   return (
     <NavbarContext.Provider
-      value={{ isOnTop, setIsOnTop, globalStyles, setglobalStyles }}
+      value={{
+        isOnTop,
+        setIsOnTop,
+        navStyles: navStyles,
+        setNavStyles: setNavStyles,
+      }}
     >
       {children}
     </NavbarContext.Provider>

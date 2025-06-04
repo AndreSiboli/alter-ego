@@ -10,18 +10,18 @@ import Link from "next/link";
 import { NavbarContext } from "@/_context/NavbarContext";
 
 export default function Navbar() {
+  const { isOnTop, navStyles } = use(NavbarContext);
   const domains = [
     { href: "/#home", text: "Home" },
     { href: "/#what-is-it", text: "What's it" },
     { href: "/#alter-ego", text: "Alter Ego" },
     { href: "/#inspirations", text: "Inspirations" },
   ];
-  const { isOnTop, globalStyles } = use(NavbarContext);
 
   return (
     <header
-      className={`${styles.header} ${isOnTop && styles.onTop}`}
-      style={{ ...globalStyles }}
+      className={`${styles.header} ${isOnTop && styles.onTop} `}
+      style={{ ...navStyles }}
     >
       <Container>
         <div className={styles.header_container}>
@@ -33,10 +33,8 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <div className={styles.header_wrapper}>
-              <div className={styles.header_logo}>
-                <Logo />
-              </div>
+            <div className={styles.header_logo}>
+              <Logo />
             </div>
             <div className={styles.navigation_links}>
               {domains.slice(2).map((domain) => (
