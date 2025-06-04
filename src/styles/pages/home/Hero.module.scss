@@ -1,0 +1,156 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.hero {
+  position: relative;
+  padding-top: 4em;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #0000 60%, var.$clr-dark-normal 100%);
+    pointer-events: none;
+    user-select: none;
+    z-index: 3;
+  }
+
+  &_middle {
+    padding-top: 4em;
+    position: relative;
+    width: 100%;
+  }
+
+  &_title {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    opacity: 0;
+    pointer-events: none;
+
+    h1 {
+      font-size: clamp(2.5rem, 10vw, 10rem);
+      letter-spacing: 0.25em;
+      font-family: var(--font-cook);
+    }
+  }
+
+  &_image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(100px);
+    z-index: 2;
+
+    img {
+      width: 80%;
+      height: auto;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  &_button {
+    z-index: 9;
+    max-height: calc(100dvh - 4em);
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    padding: 1em;
+
+    button {
+      position: absolute;
+      bottom: 16px;
+      right: 0;
+      pointer-events: auto;
+      border-radius: 0.5em;
+      // border: 1px solid var.$clr-light-hard;
+      border: none;
+      background: var.$clr-dark-normal;
+      color: var.$clr-light-hard;
+      font-weight: bold;
+      padding: 0.5em;
+      text-transform: uppercase;
+      cursor: pointer;
+
+
+      @media (max-width: 1200px) {
+        right: 16px;
+      }
+
+      svg {
+        display: block;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &_name {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+
+    p {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+      //   text-shadow: 0 0 3px #fff;
+    }
+  }
+
+  &_infinite {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 0 1em;
+    text-transform: uppercase;
+    overflow: hidden;
+    opacity: 0;
+
+    &.right {
+      right: 0;
+    }
+
+    // &:last-child {
+    //   background: blue;
+    // }
+
+    .infinite_wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .wrapper_container {
+        animation: 5s linear infinite infiniteSlide;
+
+        p {
+          writing-mode: vertical-lr;
+          text-wrap: nowrap;
+          font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+          margin-bottom: 1em;
+
+          &::after {
+            content: "•";
+            margin-top: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes infiniteSlide {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

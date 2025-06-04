@@ -1,0 +1,43 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.footer {
+  box-shadow: 0 -5px 10px 1px #0001;
+  background: var.$clr-dark-normal;
+  color: var.$clr-light-hard;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding: 2em;
+
+    @media (max-width: 680px) {
+      padding-bottom: 5em;
+    }
+  }
+
+  &_links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  &_media {
+    a {
+      font-size: 1.25em;
+    }
+  }
+
+  &_rights {
+    margin-top: 1em;
+
+    p {
+      text-align: center;
+      color: var.$neutral_color_400;
+    }
+  }
+}

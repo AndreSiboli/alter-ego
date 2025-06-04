@@ -1,0 +1,36 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.radio {
+  input {
+    display: none;
+
+    &:checked + label {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  label {
+    @include mix.Flex;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid var.$clr_light_hard;
+    width: 16px;
+    aspect-ratio: 1/1;
+    transition: border 0.25s ease-in-out;
+
+    &:after {
+      display: block;
+      content: "";
+      width: 8px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background: var.$clr_light_hard;
+
+      opacity: 0;
+      transition: opacity 0.25s ease-in-out;
+    }
+  }
+}

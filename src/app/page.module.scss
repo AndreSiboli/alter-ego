@@ -1,0 +1,8 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.page {
+  display: grid;
+  place-content: center;
+  min-height: 100dvh;
+}

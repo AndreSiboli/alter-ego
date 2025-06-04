@@ -1,0 +1,36 @@
+@use "@/styles/_dirs/variables" as var;
+
+@mixin OnlyPc {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin Scroll {
+  &::-webkit-scrollbar {
+    max-width: 10px;
+    background: var.$clr-dark-normal;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var.$clr-light-hard;
+    border-radius: 0.5em;
+
+    &:hover {
+      background: #fffc;
+      cursor: grab;
+    }
+
+    &:active{
+      cursor: grabbing;
+    }
+  }
+}
+
+@mixin Flex($jc: center, $ai: center, $direction: row, $gap: 0em) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+}

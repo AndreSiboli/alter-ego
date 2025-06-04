@@ -1,0 +1,69 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.question {
+  background: var.$clr-dark-normal;
+  color: var.$clr-light-hard;
+  height: 350dvh;
+  position: relative;
+
+  &_container {
+    position: sticky;
+    top: 0;
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100dvh;
+
+    .text_line {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .wrapper_image {
+        aspect-ratio: auto;
+        margin: 0.5em;
+        border: 3px dashed #fff;
+        border-radius: 0.5em;
+        width: calc(100vw * 161 / 1200);
+        position: relative;
+
+        @media (max-width: 768px) {
+          width: 155px;
+          height: 77px;
+        }
+
+        img {
+          padding: 0.5em;
+          border-radius: 0.5em;
+        }
+      }
+
+      p {
+        padding-right: 0.1em;
+      }
+    }
+
+    p {
+      display: inline-block;
+      font-size: 7vw;
+      text-transform: uppercase;
+      overflow: hidden;
+      white-space: nowrap;
+
+      @media (max-width: 768px) {
+        font-size: clamp(1.5rem, 9vw, 7rem);
+      }
+    }
+  }
+}

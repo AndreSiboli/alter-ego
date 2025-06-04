@@ -1,0 +1,35 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.about {
+  background: var.$clr-dark-normal;
+  padding-top: 9em;
+  padding-bottom: 5em;
+  position: relative;
+  color: #fff;
+
+  &_question {
+    padding: 0 1em;
+
+    .question_title {
+      h1 {
+        color: #fff;
+        font-family: var(--font-cook);
+        font-size: clamp(1.5rem, 2vw, 2em);
+      }
+    }
+
+    .answer_text {
+      columns: 350px 2;
+      column-gap: 3em;
+      width: 100%;
+      margin-top: 1.5em;
+
+      p {
+        display: inline-block;
+        font-size: clamp(1rem, 1.5vw, 1.25em);
+        margin-bottom: 2em;
+      }
+    }
+  }
+}

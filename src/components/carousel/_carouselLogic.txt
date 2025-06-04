@@ -1,0 +1,67 @@
+Logic on changeItem where mixmax is set.
+
+Example:
+
+totalItems = 7
+itemsAppearance = 2   // How many items are visible at once
+itemsPerView = 2      // How many items should slide per interaction
+
+------------------------
+
+Goal:
+Never allow the carousel to scroll past a point where fewer than 2 items can be shown.
+
+Calculate the max start index without showing empty space:
+const maxStartIndex = Math.max(0, totalItems - itemsAppearance);
+maxStartIndex = Math.max(0, 7 - 2) = 5
+
+So we can only go as far as starting at index 5:
+That way, items [5, 6] are shown, and we don’t go beyond the total items.
+
+------------------------
+
+currentPosition = 0
+Shows items: [0, 1]
+
+Slide forward:
+next = 0 + 2 = 2
+next = Math.min(2, 5) = 2
+Shows items: [2, 3]
+
+Slide forward again:
+next = 2 + 2 = 4
+next = Math.min(4, 5) = 4
+Shows items: [4, 5]
+
+Slide forward again:
+next = 4 + 2 = 6
+next = Math.min(6, 5) = 5
+Shows items: [5, 6]
+
+Slide forward again:
+next = 5 + 2 = 7
+next = Math.min(7, 5) = 5
+Still stays at [5, 6] — can't go further
+
+------------------------
+
+Slide backward:
+next = 5 - 2 = 3
+next = Math.max(0, 3) = 3
+Shows items: [3, 4]
+
+Slide backward:
+next = 3 - 2 = 1
+next = Math.max(0, 1) = 1
+Shows items: [1, 2]
+
+Slide backward:
+next = 1 - 2 = -1
+next = Math.max(0, -1) = 0
+Shows items: [0, 1]
+
+------------------------
+
+Conclusion:
+The position is always kept between 0 and maxStartIndex (5),
+ensuring we never go beyond what can be fully displayed.
