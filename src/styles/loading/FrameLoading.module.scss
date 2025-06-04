@@ -63,5 +63,12 @@
     aspect-ratio: 1/1;
     border-radius: 100%;
     bottom: 20px;
+    animation: 1s linear infinite loading;
+
+    @keyframes loading {
+      to {
+        transform: rotate(360deg);
+      }
+    }
   }
 }

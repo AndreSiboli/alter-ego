@@ -40,16 +40,6 @@ export default function FrameLoading(props: PropsType) {
       .to(childrenText[1], {
         x: c2.xMiddle + 40,
       })
-      .to(
-        loadingRef.current,
-        {
-          rotate: 360,
-          duration: 1,
-          ease: "linear",
-          repeat: -1,
-        },
-        "=-.1"
-      )
       .to(childrenText, {
         duration: 0.5,
         ease: "power2.inOut",
@@ -57,7 +47,7 @@ export default function FrameLoading(props: PropsType) {
         stagger: 0.2,
       });
 
-    gsap.delayedCall(4, () => {
+    gsap.delayedCall(3, () => {
       gsap
         .timeline()
         .to(loadingRef.current, {

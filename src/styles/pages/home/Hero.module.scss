@@ -30,7 +30,7 @@
     left: 50%;
     opacity: 0;
     pointer-events: none;
-    
+
     h1 {
       font-size: clamp(2.5rem, 10vw, 10rem);
       letter-spacing: 0.25em;
@@ -116,10 +116,6 @@
     &.right {
       right: 0;
     }
-
-    // &:last-child {
-    //   background: blue;
-    // }
 
     .infinite_wrapper {
       display: flex;
