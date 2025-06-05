@@ -9,13 +9,10 @@ import Image from "next/image";
 import Container from "@/components/layout/Container";
 
 import { LiaExchangeAltSolid } from "react-icons/lia";
+import { LoadingContext } from "@/_context/Loading";
 
-interface PropsType {
-  isLoading: boolean;
-}
-
-export default function Hero(props: PropsType) {
-  const { isLoading } = props;
+export default function Hero() {
+  const { isLoading } = use(LoadingContext);
   const { setNavStyles } = use(NavbarContext);
   const [currCharacter, setCurrCharacter] = useState(characters[0]);
   const [isChanging, setIsChanging] = useState(false);

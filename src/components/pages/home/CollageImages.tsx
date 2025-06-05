@@ -5,11 +5,11 @@ import styles from "@/styles/pages/home/CollageImages.module.scss";
 import Img from "@/components/utils/Img";
 
 import cowboy from "@/assets/thumbnails/cowboy.png";
-import hiro from "@/assets/thumbnails/hiro.png";
-import ochaco from "@/assets/thumbnails/ochaco.png";
+import violet from "@/assets/thumbnails/violet.png";
 import ichigo from "@/assets/thumbnails/ichigo.png";
 import thorfinn from "@/assets/thumbnails/thorfinn.png";
 import evagelion from "@/assets/thumbnails/evagelion.png";
+import family from "@/assets/thumbnails/family.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,13 +21,14 @@ export default function CollageImages() {
       style: { objectPosition: "90% center" },
     },
     {
-      src: hiro,
+      src: family,
       alt: "Image from Hiro and Zero Two from Darling In The Franxx",
-      style: { objectPosition: "30% center" },
+      style: { objectPosition: "40% center" },
     },
     {
-      src: ochaco,
-      alt: "Image from Ochaco Uraraka from My Hero Academia",
+      src: violet,
+      alt: "Image from Loid, Yor, and Anya from Spy X Family",
+      style: { objectPosition: "60% center" },
     },
     {
       src: ichigo,

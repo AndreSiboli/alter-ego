@@ -1,15 +1,12 @@
 "use client";
 
-import styles from "@/styles/loading/FrameLoading.module.scss";
+import { use, useEffect, useRef } from "react";
+import { LoadingContext } from "@/_context/Loading";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import styles from "@/styles/loading/FrameLoading.module.scss";
 
-interface PropsType {
-  handleLoading: (value: boolean) => void;
-}
-
-export default function FrameLoading(props: PropsType) {
-  const { handleLoading } = props;
+export default function FrameLoading() {
+  const { isLoading, setIsLoading } = use(LoadingContext);
   const frameRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
@@ -22,7 +19,8 @@ export default function FrameLoading(props: PropsType) {
       !lineRef.current ||
       !frameRef.current ||
       !textRef.current ||
-      !loadingRef.current
+      !loadingRef.current ||
+      !isLoading
     )
       return;
 
@@ -87,11 +85,11 @@ export default function FrameLoading(props: PropsType) {
           visibility: "hidden",
           onStart: () => {
             document.body.style.overflow = "auto";
-            handleLoading(false);
+            setIsLoading(false);
           },
         });
     });
-  }, []);
+  }, [isLoading]);
 
   function getElementBounds(el: Element) {
     const bound = el.getBoundingClientRect();

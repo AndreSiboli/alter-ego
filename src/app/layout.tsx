@@ -3,6 +3,7 @@ import { UnifrakturCook, Exo_2 } from "next/font/google";
 import "./globals.scss";
 import MainContainer from "@/components/layout/MainContainer";
 import NavbarProvider from "@/_context/NavbarContext";
+import LoadingProvider from "@/_context/Loading";
 
 const unifracturCook = UnifrakturCook({
   variable: "--font-cook",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "This is just a project to practice my skills with GSAP. It's not an informative post. If you're interested in the topic, feel free to do your own research.",
   authors: [{ name: "André Siboli", url: "https://github.com/AndreSiboli" }],
-  keywords: 'anime, alter ego, gsap, animation'
+  keywords: "anime, alter ego, gsap, animation",
 };
 
 export default function RootLayout({
@@ -32,9 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${exo_2.className} ${unifracturCook.variable}`}>
-        <NavbarProvider>
-          <MainContainer>{children}</MainContainer>
-        </NavbarProvider>
+        <LoadingProvider>
+          <NavbarProvider>
+            <MainContainer>{children}</MainContainer>
+          </NavbarProvider>
+        </LoadingProvider>
       </body>
     </html>
   );

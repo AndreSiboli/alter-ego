@@ -2,7 +2,6 @@
 
 // import styles from "./page.module.scss";
 import FrameLoading from "@/components/loading/FrameLoading";
-import { useState } from "react";
 import { Lenis } from "lenis/react";
 
 import Hero from "@/components/pages/home/Hero";
@@ -12,13 +11,11 @@ import Answer from "@/components/pages/home/Answer";
 import CollageImages from "@/components/pages/home/CollageImages";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <>
-      <FrameLoading handleLoading={setIsLoading}/>
+      <FrameLoading />
       <Lenis root options={{ anchors: true }}>
-        <Hero isLoading={isLoading}/>
+        <Hero />
         <About />
         <Question />
         <Answer />
