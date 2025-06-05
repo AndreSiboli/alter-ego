@@ -8,6 +8,10 @@
   position: relative;
   color: #fff;
 
+   @media (max-width: 768px) {
+    padding-bottom: 1em;
+  }
+
   &_question {
     padding: 0 1em;
 

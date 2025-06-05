@@ -10,7 +10,7 @@ export default function Answer() {
   const parentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if(!parentRef.current) return 
+    if (!parentRef.current) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -32,33 +32,28 @@ export default function Answer() {
       <Container>
         <div className={styles.answer_container} ref={parentRef}>
           <p>The short answer is no, but let&apos;s dive deeper.</p>
-
           <p>
-            Humans often seek motivation from people or things around them. An
-            alter ego is no different, it&apos;s a second version of yourself. It can
-            emerge from a situation or experience that forces you to reflect on
-            who you are. In fiction, many characters have an alter ego. But this
-            doesn&apos;t happen only in fiction, real people also experience this
-            need. So, if your second self doesn&apos;t hurt you or anyone else, it&apos;s
-            completely normal. Having an alter ego based on a character from an
-            anime, movie, or even a real person can be a way to build your own
-            identity. For example: Guts from Berserk.
-          </p>
-
-          <p>
-            Guts was a warrior forged in blood, finding purpose with the Band of
-            the Hawk—until his closest friend, Griffith, betrayed them in the
-            Eclipse, sacrificing their comrades and violating Casca, Guts&apos;
-            beloved. Crushed by loss and consumed by rage, Guts became the Black
-            Swordsman, hunting demons in a spiral of vengeance. But through new
-            allies and the will to protect, he slowly rises from the darkness,
-            choosing redemption over revenge.
+            Humans often seek motivation in the world around them, and an alter
+            ego is one way this search takes form. It&apos;s a second version of
+            yourself—born from deep reflection or intense experiences—that helps
+            you navigate who you are or who you want to become. While alter egos
+            are common in fiction, they&apos;re just as real in everyday life. Many
+            people shape theirs based on characters from anime, movies, or even
+            real peoples who inspire them.
           </p>
           <p>
-            A regular person who was once blinded by their own anger can come to
-            see it as a way to grow. There are many examples of this, like
-            Thorfinn from Vinland Saga or David from Cyberpunk: Edgerunners.
-            It&apos;s a path toward becoming a better version of yourself.
+            Take Guts from Berserk as an example: a warrior shaped by pain and
+            betrayal who, despite being consumed by rage, begins to seek
+            redemption and protect others. His journey from vengeance to growth
+            mirrors what many people experience internally. Other characters
+            like Thorfinn from Vinland Saga or David from Cyberpunk: Edgerunners
+            also show how suffering and anger can become catalysts for change.
+          </p>
+          <p>
+            If your alter ego doesn&apos;t harm you or others, it&apos;s not just
+            normal—it&apos;s a powerful way to grow. It can serve as a guide, helping
+            you move from who you were to who you strive to be, one step at a
+            time.
           </p>
         </div>
       </Container>

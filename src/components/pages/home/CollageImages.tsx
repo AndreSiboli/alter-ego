@@ -101,8 +101,7 @@ export default function CollageImages() {
     tl.from(children, {
       y: 200,
       opacity: 0,
-      stagger: 0.1,
-      ease: "power1.out",
+      ease: "power2.out",
     });
   }
 

@@ -4,20 +4,17 @@
 .answer {
   min-height: 100dvh;
   background: var.$clr-dark-normal;
-  padding: 0 2em;
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding: 5em 1em;
+
+  @media (max-width: 768px) {
+    padding-top: 5em;
+  }
 
   &_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
-
-    p:first-child {
-      font-size: clamp(1.25rem, 1.5vw, 1.5rem);
-      font-weight: bold;
-    }
 
     p {
       color: var.$clr-light-hard;
@@ -26,6 +23,11 @@
       max-width: 800px;
       width: 100%;
       line-height: 1.5em;
+
+      &:first-child {
+        font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+        font-weight: bold;
+      }
     }
   }
 }

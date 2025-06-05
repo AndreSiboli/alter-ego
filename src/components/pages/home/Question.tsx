@@ -70,14 +70,14 @@ export default function Question() {
         stagger: 0.15,
       })
       .to(
-        line3Span.current,
+        split3.chars,
         {
-          background: "#fff",
-          color: "#000",
           duration: 0.5,
+          textShadow: "3px 3px 3px #BA042B",
+          stagger: 0.1,
           ease: "power2.inOut",
         },
-        "-=.8"
+        "-=1"
       );
 
     return () => {
